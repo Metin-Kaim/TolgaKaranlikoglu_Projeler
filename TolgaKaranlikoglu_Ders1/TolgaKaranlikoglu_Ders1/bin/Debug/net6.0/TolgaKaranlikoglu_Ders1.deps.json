@@ -1,0 +1,23 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v6.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v6.0": {
+      "TolgaKaranlikoglu_Ders1/1.0.0": {
+        "runtime": {
+          "TolgaKaranlikoglu_Ders1.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "TolgaKaranlikoglu_Ders1/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}
