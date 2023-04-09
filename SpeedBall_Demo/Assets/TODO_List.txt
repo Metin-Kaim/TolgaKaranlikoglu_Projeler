@@ -1,5 +1,0 @@
-﻿[ ] Canvas
-	[ ] Gameover
-	[ ] Win
-[ ] Score
-[?] Topun hareket sistemini gözden gecir
