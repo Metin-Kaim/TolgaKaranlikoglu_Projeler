@@ -19,36 +19,33 @@ public class PlayerMovement : MonoBehaviour
         _rigidbody = GetComponent<Rigidbody>();
     }
 
-    private void Start()
+    private void Update()
     {
-    }
-
-    void Update()
-    {
-        _rigidbody.velocity = Vector3.forward * _velocity;
-
         print(_rigidbody.velocity);
     }
+
     private void FixedUpdate()
     {
-        //_rigidbody.AddForce(Vector3.forward * _velocity * Time.fixedDeltaTime, ForceMode.Impulse);
+        _rigidbody.AddForce(new Vector3(0, -1, 1 ) * _velocity, ForceMode.Force);
+        
 
-
+        #region Horizontal_Move
         if (_inputReader.MoveDir < 0)//left direction 
         {
             HorizontalMove(1);
         }
-        else if (_inputReader.MoveDir > 0)
+        else if (_inputReader.MoveDir > 0)//right direction 
         {
             HorizontalMove(0);
         }
+        #endregion
     }
 
-    private void HorizontalMove(int dir)
+    private void HorizontalMove(int direction)
     {
-        if (Mathf.Abs(transform.position.x - _floorPoints[dir].position.x) < .05f)
-            transform.position = new Vector3(_floorPoints[dir].position.x, transform.position.y, transform.position.z);
+        if (Mathf.Abs(transform.position.x - _floorPoints[direction].position.x) < .05f)
+            transform.position = new Vector3(_floorPoints[direction].position.x, transform.position.y, transform.position.z);
 
-        transform.position = Vector3.Lerp(transform.position, new Vector3(_floorPoints[dir].position.x, transform.position.y, transform.position.z), .2f);
+        transform.position = Vector3.Lerp(transform.position, new Vector3(_floorPoints[direction].position.x, transform.position.y, transform.position.z), .15f);
     }
 }
